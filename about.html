@@ -187,4 +187,17 @@
                             </ul>
 </body>
 
+<script>
+    // Add target="_blank" attribute to all external links
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            const url = new URL(link.href);
+            if (url.hostname !== window.location.hostname) {
+                link.setAttribute('target', '_blank');
+            }
+        });
+    });
+</script>
+
 </html>
